@@ -1,29 +1,27 @@
 //zona1: importaciones de componentes y archivos
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image } from 'react-native';
-import { Saludo } from './components/Saludo';
-import { Salu2 } from './components/Salu2';
+import { Perfil } from './components/Perfil';
 
 //Zona2: main - hogar de la aplicación, donde se renderizan los componentes y se define la estructura visual de la app
 export default function App() {
   return (
     <View style={styles.container}>
 
-      <Text> ----------- Componentes Nativos -------------- </Text>
+    <Perfil nombre="Saul Silva" carrera="Sistemas" materia="P Movil" cuatri="noveno" ></Perfil>
 
-      <Image source={require('./assets/wave.png')}/>
+    <Text>___________________________________________________________________________</Text>
 
-      <Text> Hola mundo RN xddddd </Text>
+    <Text>___________________________________________________________________________</Text>
 
-      <Text> ----------- Componente Simple -------------- </Text>
+    <Perfil 
+    nombre="Fred Durst" 
+    carrera="Musica" 
+    materia="Limp Biskit" 
+    cuatri="xd" >
+    </Perfil>
 
-      <Saludo></Saludo>
-
-      <Text> ----------- Componente Compuesto ----------- </Text>
-
-      <Salu2></Salu2>
-
-      <StatusBar style="auto" />
+    <Perfil> </Perfil>
 
     </View>
   );
@@ -33,7 +31,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#ffffff',
     alignItems: 'center',
     justifyContent: 'center',
   },
