@@ -8,24 +8,25 @@ export default function App() {
   return (
     <View style={styles.container}>
 
-    <Perfil nombre="Saul Silva" carrera="Sistemas" materia="P Movil" cuatri="noveno" ></Perfil>
+    <Perfil estiloE={styles.tarjetaRoja} nombre="Saul Silva" carrera="Sistemas" materia="P Movil" cuatri="noveno" ></Perfil>
 
-    <Text>___________________________________________________________________________</Text>
-
-    <Text>___________________________________________________________________________</Text>
 
     <Perfil 
+    estiloE={styles.tarjetaVerde}
     nombre="Fred Durst" 
     carrera="Musica" 
     materia="Limp Biskit" 
     cuatri="xd" >
     </Perfil>
 
-    <Perfil> </Perfil>
+    <Perfil estiloE={styles.tarjetaRoja} nombre="Saul Silva2" carrera="Sistemas" materia="P Movil" cuatri="noveno" ></Perfil>
+
 
     </View>
+
   );
 }
+
 
 //Zona3: estilos - define los estilos para los componentes de la aplicación, en este caso, el contenedor principal
 const styles = StyleSheet.create({
@@ -34,5 +35,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     alignItems: 'center',
     justifyContent: 'center',
+    flexDirection:'row'
   },
-});
+    tarjetaRoja:{ backgroundColor:'#FF6B6B'},
+    tarjetaVerde:{ backgroundColor:'#6BCB77'},
+  });
