@@ -11,9 +11,33 @@ export default function FlatSectionListScreen() {
     { id: '2', nombre: 'Elemento B' },
     { id: '3', nombre: 'Elemento C' },
     { id: '4', nombre: 'Elemento D' },
+    { id: '1', nombre: 'Elemento A' },
+    { id: '2', nombre: 'Elemento B' },
+    { id: '3', nombre: 'Elemento C' },
+    { id: '4', nombre: 'Elemento D' },
+    { id: '1', nombre: 'Elemento A' },
+    { id: '2', nombre: 'Elemento B' },
+    { id: '3', nombre: 'Elemento C' },
+    { id: '4', nombre: 'Elemento D' },
   ]);
 
   const [secciones, setSecciones] = useState([
+    {
+      tituloCategoria: 'Refrescos',
+      data: ['Coca-cola', 'Fanta', 'Pepsi'],
+    },
+    {
+      tituloCategoria: 'Jugos',
+      data: ['Zanahoria', 'Naranja', 'Remolacha']
+    },
+    {
+      tituloCategoria: 'Refrescos',
+      data: ['Coca-cola', 'Fanta', 'Pepsi'],
+    },
+    {
+      tituloCategoria: 'Jugos',
+      data: ['Zanahoria', 'Naranja', 'Remolacha']
+    },
     {
       tituloCategoria: 'Refrescos',
       data: ['Coca-cola', 'Fanta', 'Pepsi'],
