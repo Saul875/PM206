@@ -3,6 +3,8 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import React,{ useState } from 'react';
 import { FlatList } from 'react-native-web';
+
+//Imports de Screens
 import ActIndicatorScreen from './ActIndicatorScreen';
 import FlatSectionListScreen from './FlatSectionListScreen';
 import ImageBackgroundScreen from './ImageBackgroundScreen';
