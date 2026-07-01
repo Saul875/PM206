@@ -1,27 +1,104 @@
-//zona1: importaciones de componentes y archivos
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ImageBackground,
+  ActivityIndicator
+} from 'react-native';
 
-//Zona2: main - hogar de la aplicación, donde se renderizan los componentes y se define la estructura visual de la app
-export default function imageBackgroud() {
+import * as SplashScreen from 'expo-splash-screen';
+
+SplashScreen.preventAutoHideAsync().catch(() => {
+});
+
+export default function ImageBackgroundScreen() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function prepararAplicacion() {
+      try {
+        
+        await new Promise((resolve) => setTimeout(resolve, 3000));
+      } catch (e) {
+        console.warn(e);
+      } finally {
+        
+        setLoading(false);
+      }
+    }
+
+    prepararAplicacion();
+  }, []);
+
+  
+  useEffect(() => {
+    if (!loading) {
+      
+      SplashScreen.hideAsync();
+    }
+  }, [loading]);
+
+  
+  if (loading) {
+    return (
+      <View style={styles.splash}>
+        <ActivityIndicator size="large" color="#0000ff" style={{ marginBottom: 20 }} />
+        <Text style={styles.splashText}>Cargando aplicación...</Text>
+      </View>
+    );
+  }
+
+  
   return (
-    <View style={styles.container}>
-
-    <Text> Aquí va la práctica de Diego Rivera </Text>
-
-    <StatusBar style="auto"/>
-    </View>
-
+    <ImageBackground
+      source={{ uri: 'https://picsum.photos/500/900' }}
+      style={styles.background}
+      resizeMode="cover"
+    >
+      <View style={styles.overlay}>
+        <Text style={styles.titulo}>Bienvenido a React Native</Text>
+        <Text style={styles.subtitulo}>
+          Ejemplo de ImageBackground y SplashScreen
+        </Text>
+      </View>
+    </ImageBackground>
   );
 }
 
-//Zona3: estilos - define los estilos para los componentes de la aplicación, en este caso, el contenedor principal
 const styles = StyleSheet.create({
-  container: {
+  splash: {
     flex: 1,
-    backgroundColor: '#ffffff',
-    alignItems: 'center',
     justifyContent: 'center',
-    flexDirection:'row'
+    alignItems: 'center',
+    backgroundColor: '#ffffff',
+  },
+  splashText: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#333333',
+  },
+  background: {
+    flex: 1, 
+    width: '100%',
+  },
+  overlay: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.4)', 
+    paddingHorizontal: 20,
+  },
+  titulo: {
+    fontSize: 28,
+    color: '#ffffff',
+    fontWeight: 'bold',
+    marginBottom: 10,
+    textAlign: 'center',
+  },
+  subtitulo: {
+    fontSize: 18,
+    color: '#e0e0e0',
+    textAlign: 'center',
   },
 });
