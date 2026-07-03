@@ -1,18 +1,13 @@
 //zona1: importaciones de componentes y archivos
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {useState} from 'react'
+import { StyleSheet, Text, View, Button, Modal, Pressable } from 'react-native';
 
 //Zona2: main - hogar de la aplicación, donde se renderizan los componentes y se define la estructura visual de la app
 export default function modal() {
-  return (
-    <View style={styles.container}>
+  const [modalVisible, setModalVisible] = useState(false);
 
-    <Text> Aquí va la práctica de Rafael </Text>
 
-    <StatusBar style="auto"/>
-    </View>
-
-  );
 }
 
 //Zona3: estilos - define los estilos para los componentes de la aplicación, en este caso, el contenedor principal
